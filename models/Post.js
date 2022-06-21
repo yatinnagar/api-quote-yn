@@ -8,23 +8,14 @@ const PostSchema=mongoose.Schema({
         type:String,
         required:true
      },
+    topics:{
+        type:String
+    },
      wikiUrl:{
         type:String
         
      } ,
-    book:{
-        bookName:{
-            type:String
-            
-         },
-        bookUrl:{
-            type:String
-            
-         }
-      
-       
-    } ,
-    personImg:{
+    personImgUrl:{
        type:String
        
     } 
