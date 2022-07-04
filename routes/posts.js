@@ -10,22 +10,5 @@ router.get('/',async (req,res)=>{
         res.json({message:err});
     }
 });
-router.post('/',async (req,res)=>{
-    const post=new Post({
-        quoteText:req.body.quoteText,
-        personName:req.body.personName,
-        wikiUrl:req.body.wikiUrl,
-        book:{
-            bookName:req.body.book.bookName,
-            bookUrl:req.body.book.bookUrl
-        },
-        personImg:req.body.personImg
 
-    })
-  try{ const savedPost=await post.save()
-    res.json(savedPost)}
-    catch(err){
-        res.json({message:err});
-    }
-})
 module.exports=router;
