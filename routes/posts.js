@@ -7,7 +7,7 @@ router.get('/',async (req,res)=>{
         if(charLimit){
          
            
-            Post.findOne().where(`this.quoteText.length<=${charLimit}`).exec((err,result)=>{
+            Post.find().where(`this.quoteText.length<=${charLimit}`).sample(1).exec((err,result)=>{
               if(err){
               return res.status(501).json({
               error:"somthing went wrong!"
