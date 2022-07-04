@@ -6,7 +6,7 @@ router.get('/',async (req,res)=>{
         let charLimit=parseInt(req.query.char_limit);
         if(charLimit){
           
-            Post.find({}).$where(`this.quoteText.length<=${charLimit}`).limit(1).exec((err,result)=>{
+            Post.find({}).where(`this.quoteText.length<=${charLimit}`).limit(1).exec((err,result)=>{
               if(err){
               return res.status(501).json({
               error:"somthing went wrong!"
